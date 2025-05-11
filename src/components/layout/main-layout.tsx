@@ -14,9 +14,6 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
           {children}
         </main>
       </div>
-      <footer className="py-6 text-center text-sm text-muted-foreground border-t">
-        <p>Purposeful Lifelong Learning Environment</p>
-      </footer>
     </div>
   )
 }

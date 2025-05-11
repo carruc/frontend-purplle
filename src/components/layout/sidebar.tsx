@@ -68,7 +68,11 @@ export const Sidebar = () => {
         {/* Searchbar */}
         <div className="relative">
           <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
-            <FontAwesomeIcon icon={faMagnifyingGlass} className="h-4 w-4 text-gray-400 opacity-70" />
+            <FontAwesomeIcon 
+              icon={faMagnifyingGlass} 
+              className="h-4 w-4 text-gray-400 opacity-70" 
+              data-testid="search-icon"
+            />
           </div>
           <Input
             type="text"
@@ -98,7 +102,7 @@ export const Sidebar = () => {
               ))
             ) : (
               <span className="block px-3 py-2 text-sm text-muted-foreground">
-                {searchQuery ? 'No matching projects' : 'No projects yet'}
+                No projects yet
               </span>
             )}
           </nav>
