@@ -1,0 +1,193 @@
+<claude_guide>
+  <project_context>
+    <name>PurpLLE (Purposeful Lifelong Learning Environment)</name>
+    <mission>To create a learning environment that reduces friction for effective, continuous learning by helping students test themselves, develop metacognitive awareness, and maintain motivation for long-term learning objectives.</mission>
+    <philosophy>
+      <principle>Not substituting or automating learning, but designing an effective environment for different learners to thrive</principle>
+      <principle>Focus on evaluative learning and continuous self-assessment rather than cramming for finals</principle>
+      <principle>Structured around three pillars: WHAT (content/planning), WHY (motivation), and HOW (evaluation/techniques)</principle>
+    </philosophy>
+    <target_users>
+      <primary>University students, particularly in systems with infrequent assessment (e.g., Italian universities)</primary>
+      <future>High school students, corporate learners, independent lifelong learners</future>
+    </target_users>
+  </project_context>
+
+  <technical_specifications>
+    <frontend>
+      <framework>React with TypeScript</framework>
+      <build_tool>Vite</build_tool>
+      <starting_point>Project created with "npm create vite@latest react-ts"</starting_point>
+    </frontend>
+    <development_environment>
+      <ide>IntelliJ WebStorm</ide>
+      <containerization>Docker (recommended but not required)</containerization>
+    </development_environment>
+  </technical_specifications>
+
+  <core_data_models>
+    <model name="Project">
+      <description>A course or subject the user is studying, containing all related materials and metrics</description>
+      <properties>
+        <property name="id" type="string">Unique identifier relative to the user</property>
+        <property name="milestones" type="array<Milestone>">Zero or more milestones associated with the project</property>
+        <property name="deadlineMilestone" type="Milestone">Exactly one deadline milestone</property>
+        <property name="documents" type="array<Document>">List of associated documents uploaded by the user</property>
+        <property name="motivations" type="array<string>">List of user-input motivations for studying this project</property>
+        <property name="learningSessions" type="array<LearningSession>">List of associated learning sessions</property>
+        <property name="overallPerformance" type="number">Percentage indicating overall performance</property>
+        <property name="difficulty" type="number">Percentage indicating difficulty level</property>
+        <property name="interest" type="number">Percentage indicating interest factor</property>
+      </properties>
+    </model>
+
+    <model name="Milestone">
+      <description>A significant date associated with a project</description>
+      <properties>
+        <property name="title" type="string">Title describing the milestone</property>
+        <property name="date" type="Date">Date of the milestone</property>
+        <property name="projectId" type="string">Associated project identifier</property>
+      </properties>
+    </model>
+
+    <model name="Document">
+      <description>A document uploaded by the user, categorized as either a Resource or a Test</description>
+      <properties>
+        <property name="projectId" type="string">Associated project identifier</property>
+        <property name="filename" type="string">Name of the file</property>
+        <property name="category" type="enum">Either "Resource" or "Test"</property>
+        <property name="content" type="string">Processed content of the document</property>
+        <property name="embeddings" type="array">Vector embeddings for RAG retrieval</property>
+      </properties>
+    </model>
+
+    <model name="Question">
+      <description>A question generated from test documents with reference to resource documents</description>
+      <properties>
+        <property name="question" type="string">The question text</property>
+        <property name="answer" type="string">The correct answer</property>
+        <property name="correction" type="string">Explanation or correction notes</property>
+        <property name="testDocumentId" type="string">ID of the test document this was extracted from</property>
+        <property name="sourceReferences" type="array<{documentId: string, lineNumber: number}>">References to resource documents and line numbers</property>
+        <property name="evaluation" type="number">Percentage score for this question</property>
+      </properties>
+    </model>
+
+    <model name="LearningSession">
+      <description>A structured study session with pre/post assessment and metacognitive elements</description>
+      <properties>
+        <property name="projectId" type="string">Associated project identifier</property>
+        <property name="timestamp" type="Date">When the session occurred</property>
+        <property name="duration" type="object">Duration in hours and minutes</property>
+        <property name="motivation" type="string">User's motivation for this session</property>
+        <property name="learningObjective" type="string">What the user aims to learn</property>
+        <property name="awarenessLevel" type="number">Percentage indicating metacognitive awareness</property>
+        <property name="confidenceLevel" type="number">Percentage indicating confidence</property>
+        <property name="energyLevel" type="number">Percentage indicating energy</property>
+        <property name="performanceLevel" type="number">Percentage indicating performance</property>
+        <property name="satisfactionLevel" type="number">Percentage indicating satisfaction</property>
+        <property name="resourceDocuments" type="array<string>">List of resource document IDs</property>
+        <property name="testDocuments" type="array<string>">List of test document IDs</property>
+        <property name="questions" type="array<Question>">Array of questions for this session</property>
+      </properties>
+    </model>
+  </core_data_models>
+
+  <development_approach>
+    <phase name="setup">
+      <step>Set up Vite with React and TypeScript</step>
+      <step>Configure project structure following component-based architecture</step>
+      <step>Set up type definitions for core data models</step>
+      <step>Implement basic routing structure</step>
+    </phase>
+    
+    <phase name="core_components">
+      <step>Implement Project management components</step>
+      <step>Create Document upload and management interface</step>
+      <step>Develop Learning Session workflow components</step>
+      <step>Build Question and testing interface components</step>
+    </phase>
+    
+    <phase name="state_management">
+      <step>Implement state management solution (Context API or Redux)</step>
+      <step>Create custom hooks for data operations</step>
+      <step>Develop type-safe API integration layer</step>
+    </phase>
+    
+    <phase name="ui_refinement">
+      <step>Implement responsive design</step>
+      <step>Create data visualization components</step>
+      <step>Develop user onboarding flow</step>
+    </phase>
+  </development_approach>
+
+  <key_workflows>
+    <workflow name="study_session">
+      <description>The core user experience of a complete learning cycle</description>
+      <steps>
+        <step>User selects a Project and specific topic(s) to study</step>
+        <step>User inputs intended study duration</step>
+        <step>System prompts user to rate confidence level before starting</step>
+        <step>System administers a short (under 5 minutes) preparatory test</step>
+        <step>User studies independently for the committed time</step>
+        <step>System prompts user to rate satisfaction and confidence after studying</step>
+        <step>System generates and administers a post-session test (10-15 minutes)</step>
+        <step>User predicts their performance before seeing results</step>
+        <step>System displays results with detailed feedback and correct answers</step>
+      </steps>
+    </workflow>
+    
+    <workflow name="project_creation">
+      <description>Setting up a new course or subject for study</description>
+      <steps>
+        <step>User creates a new Project with a name and description</step>
+        <step>User sets deadline and optional milestones</step>
+        <step>User uploads relevant study materials (PDFs, docs, etc.)</step>
+        <step>User categorizes uploads as Resources or Tests</step>
+        <step>User documents motivations for studying this subject</step>
+      </steps>
+    </workflow>
+  </key_workflows>
+
+  <implementation_priorities>
+    <priority level="1">
+      <feature>Project and Document data models and management</feature>
+      <feature>Basic Learning Session workflow</feature>
+      <feature>Simple Question display and answering interface</feature>
+    </priority>
+    
+    <priority level="2">
+      <feature>Performance tracking and visualization</feature>
+      <feature>Enhanced testing interface with multiple question types</feature>
+      <feature>Motivation tracking and reinforcement</feature>
+    </priority>
+    
+    <priority level="3">
+      <feature>Advanced analytics and studying profile</feature>
+      <feature>Personalized study technique recommendations</feature>
+      <feature>Integration with external calendars and tools</feature>
+    </priority>
+  </implementation_priorities>
+
+  <coding_guidelines>
+    <guideline>Use TypeScript interfaces for all data models</guideline>
+    <guideline>Implement component-based architecture with clear separation of concerns</guideline>
+    <guideline>Create reusable UI components with proper prop typing</guideline>
+    <guideline>Use custom hooks for shared logic and data fetching</guideline>
+    <guideline>Implement responsive design using CSS modules or styled-components</guideline>
+    <guideline>Write unit tests for critical components and functions</guideline>
+    <guideline>Use async/await for asynchronous operations</guideline>
+    <guideline>Implement proper error handling and loading states</guideline>
+  </coding_guidelines>
+
+  <response_format>
+    <instruction>When providing code solutions:</instruction>
+    <format>
+      <element>Start with a brief explanation of the approach</element>
+      <element>Provide complete, working code with TypeScript types</element>
+      <element>Include comments explaining complex logic</element>
+      <element>Suggest testing strategies for the implementation</element>
+      <element>Discuss potential optimizations or alternatives</element>
+    </format>
+  </response_format>
+</claude_guide>

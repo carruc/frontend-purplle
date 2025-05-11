@@ -1,0 +1,485 @@
+﻿1. Our app’s main mission is “Helping students test themselves.” One of the most effective study methods is evaluative learning - getting feedback on your studying performance - but self-evaluation is not easy, nor immediate. We want to help students in committing themselves to long-term learning objectives, by allowing them to get tested on their knowledge and abilities continuously. Instead of relying on finals, we want to help them understand, remember, retrieve and apply the knowledge they gained continuously, making them real experts. 
+2. Our immediate goal is to create this novel, non intrusive but supporting studying experience. Our next goal is to also implement exam planning, studying heatmaps, a “Studying Science” page, which helps students find new studying techniques, tips and protocols to improve their focus, well-being and planning skills. Our final goal is to be able to identify, store and continuously update each user’s “Studying Profile”. After profiling them, we could use this data with a recommender algorithm to suggest effective studying techniques and evidence-based protocols to students with similar profiles. It will be quite important to understand nuances between different subjects and testing modalities. 
+3. In general, our immediate go-to-market userbase will be university students - but this framework could apply to high school students, corporate learning platforms and individual lifelong learners - anyone who wants to strengthen their accountability and commitment towards long term learning.
+
+
+1. Our entry-target users typically test themselves by taking old tests uploaded by the professors and exercising on these - some minor testing methods are flashcards. Ideally, one studies every day and keeps testing themselves, but more often than not university students tend to study right before the exams, and cram tests the week before it. This is not effective from a long-term perspective, and is not efficient from a short-term one. This cramming phenomenon is especially relevant in countries where midterms are rare, such as Italy: students attend classes for 4 months, then have 4 weeks to sit 6 final exams. Here, continuous assessment is not built-in - and that’s where we want to enter with our app.
+2. Testing yourself is not easy: it requires time and energy, to gather and structure old exams, and requires personal commitment to take tests each week for 5 or 6 different courses. That’s a lot to plan for and handle. Self-evaluation is NOT taught in University or High School, and continuous assessment is not present - leaving students alone in keeping tabs on their performance - which doesn’t always reflect one’s confidence, especially if the course’s test modalities do not reflect the most effective learning approach for you.
+3. “Here are some existing platforms with features related to self-testing, personalized learning, and study support:
+* StudySmarter (https://www.studysmarter.co.uk)
+   * What they do: An AI-powered learning app for university and school students. Features include AI-generated flashcards from notes, mock exams, explanations, spaced repetition, study planning, and community-created study sets[2].
+   * Competitive Advantages: Strong AI integration for automated content creation (flashcards, exams), combines multiple study tools (notes, flashcards, planner, testing) in one platform, large existing user base and content library[2]. Uses scientifically-proven techniques like spaced repetition[2].
+   * Limitations: While using AI, the personalization might focus more on content adaptation and exam prep rather than deeply analyzing learning styles across subjects to recommend specific study techniques. May not fully capture the nuanced "Studying Profile" concept or focus as heavily on structured, continuous self-assessment for long-term retention outside of immediate exam cycles. Subject to general AI limitations like potential bias or errors[7, 15, 20].
+* EdApp (https://whatfix.com/blog/adaptive-learning-platforms/)
+   * What they do: A learning portal using AI for personalized learning experiences, progress tracking, AI course creation tools, and a spaced repetition feature called "Brain Boost" for follow-up tests[1].
+   * Competitive Advantages: Specific "Brain Boost" feature directly targets retention via spaced testing[1]. Includes AI tools potentially useful for course authors (might imply adaptability for different content types)[1]. Tracks both digital and in-person training (less relevant here)[1].
+   * Limitations: Appears primarily oriented towards corporate training initiatives (L&D teams) rather than individual university students managing their own diverse coursework[1]. May lack features tailored to academic structures like exam planning or integrating university-specific materials easily for self-testing.
+* Todait (https://amberstudent.com/blog/post/the-best-study-planning-apps-for-students)
+   * What they do: A study planning app that tracks study time, provides progress reports via graphs, and notably features automatic adjustment of study plans based on student performance and schedule changes[4]. Used for major exam prep (ACTs, etc.)[4].
+   * Competitive Advantages: Unique selling point is the adaptive planning feature, automatically adjusting schedules based on performance, aligning with dynamic study needs[4]. Strong focus on progress visualization and time tracking[4].
+   * Limitations: Primarily a planner with adaptive scheduling capabilities[4]. Likely lacks deep AI-driven testing features, automated content generation (like flashcards from notes), or personalized recommendations for how to study based on learning style analysis. Focus seems more on scheduling/tracking than the testing and learning science aspects of your vision.
+* Khan Academy (https://www.coursebox.ai/blog/best-personalized-learning-platforms)
+   * What they do: A free educational platform offering a vast library of video lessons, interactive exercises, and quizzes across many subjects. It provides personalized learning paths based on student performance[12].
+   * Competitive Advantages: Extensive library of high-quality, expert-created content[12]. Proven model of personalized learning paths adapting to student pace and understanding[12]. Completely free, making it highly accessible[12].
+   * Limitations: Primarily focused on K-12 subjects, potentially lacking depth/specificity for university-level courses[12]. Relies on its own content library; less suited for students needing to test themselves continuously on their specific lecture notes, university materials, or niche subjects. Less emphasis on integrating user-specific planning, custom test schedules, or providing insights into different studying techniques.”
+
+
+1. The app will be organized in Projects. Each project will have different sources. Users will input sourced by uploading PDFs/.docx/text files and slides. A RAG pipeline will allow LLMs to leverage such resources to create different types of tests. 
+2. The app wants to find the right trade-off between rigidity and flexibility. We want to offer different testing options (i.e. multiple choice, open-ended questions, oral examination, math problems) depending on the user’s preferences and the studied subject  (i.e. a multiple choice quiz will probably suffice for Economy 101, while Physics will need some theoretical AND analytical tests). To obtain these, we want to use the formatted-input/output option on LLMs, to send and receive JSON files that will make it easy to generate the actual tests, given the content generated by LLMs. 
+3. This is exactly the studying experience that aims to be the PoC for the application. I will explain the flow of actions: (a) the student opens the course they want to study (b) clicks the “start studying session” button (c) one explicitly inputs What they want to study and How much time they will dedicate. (d) The app will ask the user how confident they are in the topic, and will give them a quick preparatory test for the studying sessions, less than 5 minutes long. (e) Then, they can start studying independently, we don’t want them to be distracted by the app. (f) When the committed time is finished, the app will ask the user how satisfied they are about their studying session, and how confident they are on the subject after studying. (g) Now, the app has already generated a longer (10-15m) test on the selected subjects, possibly of difficulty 85% - its type depends on the parameters cited beforehands. (h) Finally, the app asks the user how well they think the test has gone, and after this they will return the results, and correct the errors. Then, a nice well-done! 
+
+
+1. Ideally with email, phone, microsoft or google account. As a first step, we could set up a simple email login and google login. Each project is a large group of thematically linked groups of resources - whether it is a university course, a language, or a personal project. The main distinction between one course and the others is the resources it is associated with - the notes, slides, etcetera - and also the statistics related to it: how many hours have been studied, progression towards the goal, how many days until the next milestone… It identifies one of the learning paths of the student.
+2. This is a very delicate part.
+________________
+Assessment and Improvement of the RASD Document
+Current Document Assessment
+The current RASD provides a solid foundation but has several areas that could be strengthened to better align with the vision discussed throughout our conversation:
+Strengths:
+* Clear purpose and scope focused on continuous self-testing
+
+* Well-structured functional requirements for content management and test generation
+
+* Detailed study session workflow that incorporates metacognitive elements
+
+Areas for Improvement:
+   * Limited emphasis on the "learning gym" concept that was central to our discussion
+
+   * Insufficient detail on how the system will address motivation and metacognitive awareness
+
+   * Missing requirements for data visualization, progress tracking, and the "Why" pillar of learning
+
+   * Lack of non-functional requirements (performance, usability, security)
+
+   * Missing technical requirements and constraints
+
+   * Incomplete user experience flow and interface requirements
+
+Improved RASD Document
+Requirements Analysis and System Definition Document
+1. Introduction
+1.1 Purpose
+To create a "learning gym" environment that helps students become more effective lifelong learners by providing tools for continuous self-testing, metacognitive awareness, and motivation management, addressing the disconnect between traditional university assessment systems and effective learning practices.
+1.2 Scope
+The initial system will focus on delivering a comprehensive learning environment primarily for university students, particularly those in systems (like Italian universities) that emphasize final exams over continuous assessment. The platform will integrate three key pillars:
+      * WHAT: Content management and study planning
+
+      * WHY: Motivation tracking and reinforcement
+
+      * HOW: Self-assessment and learning technique evaluation
+
+Future iterations will expand to serve high school students, corporate learners, and independent lifelong learners.
+1.3 Objectives & Success Criteria
+Immediate (MVP):
+         * Develop and launch the core self-testing functionality with pre/post-study assessment
+
+         * Implement basic project management and content organization
+
+         * Create simple visualization of study time and test performance
+
+         * Success measured by: User adoption, engagement metrics, and self-reported learning effectiveness
+
+Mid-term:
+            * Integrate exam planning, study heatmaps, and the "Studying Science" resource page
+
+            * Implement motivation tracking and reinforcement features
+
+            * Expand test formats and feedback mechanisms
+
+            * Success measured by: Feature usage, retention rates, and improvement in perceived learning effectiveness
+
+Long-term:
+               * Implement "Studying Profile" creation based on performance across subjects and test types
+
+               * Develop recommendation engine for personalized study strategies
+
+               * Create advanced analytics for metacognitive awareness
+
+               * Success measured by: Perceived accuracy of recommendations, system adaptability to different subjects/testing styles, and measurable improvement in academic performance
+
+2. Current System
+2.1 Current Methods
+University students primarily rely on:
+                  * Practicing with past exam papers (when available)
+
+                  * Using flashcards or summarization techniques
+
+                  * Cramming material shortly before final exams
+
+                  * Studying from slides or video lessons rather than attending lectures
+
+                  * Focusing on passing exams rather than deep understanding
+
+2.2 Problems with Current Methods
+                     * Ineffective Learning: Cramming fails to support long-term retention and deep understanding
+
+                     * Structural Issues: Academic systems often lack continuous assessment mechanisms
+
+                     * Metacognitive Gaps: Students struggle to accurately gauge their understanding
+
+                     * Motivation Challenges: External pressure to pass exams overshadows intrinsic learning motivation
+
+                     * Implementation Barriers: Students know about effective techniques but don't consistently apply them
+
+                     * Environment Friction: Creating an effective self-testing environment requires significant effort
+
+2.3 Existing Systems & Limitations
+                        * StudySmarter: Offers AI-driven flashcards/mock exams but lacks deep learning style analysis
+
+                        * EdApp: Uses spaced repetition but oriented toward corporate training
+
+                        * Todait: Excels at adaptive planning but lacks comprehensive testing features
+
+                        * Khan Academy: Provides personalized paths but uses its own content library
+
+Overall Gap: No existing platform fully addresses the need for a student-centric tool focused on continuous, structured self-testing across diverse university subjects, integrated with metacognitive awareness development and personalized insights into effective study techniques.
+3. Proposed System
+3.1 Overview
+The proposed system is designed as a "learning gym" - an environment that reduces friction for effective learning while providing structure, feedback, and metacognitive support. Users organize their study materials into "Projects" (corresponding to courses or subjects) and upload relevant documents as learning sources. The system processes these materials using a RAG pipeline and LLMs to enable intelligent test generation.
+The core user workflow revolves around structured "studying sessions" that implement a complete learning cycle:
+                           1. Pre-study: Brief assessment and confidence rating
+
+                           2. Study: Independent learning with time commitment
+
+                           3. Post-study: Satisfaction and confidence rating, comprehensive testing, performance prediction, and feedback
+
+The system will visualize learning progress through heatmaps, performance graphs, and metacognitive awareness metrics (expected vs. actual performance), helping students develop a more accurate understanding of their learning process.
+3.2 Functional Requirements
+3.2.1 User Management
+                              * The system shall allow users to create accounts and manage profiles
+
+                              * The system shall collect initial learning preferences during onboarding (15 minutes max)
+
+                              * The system shall allow users to set academic goals and deadlines
+
+                              * The system shall support multiple languages (initially Italian and English)
+
+3.2.2 Content and Project Management
+                                 * The system shall allow users to create and manage distinct "Projects" to organize their studies
+
+                                 * The system shall allow users to upload source materials within a Project
+
+                                 * Supported upload formats shall include PDF, DOCX, plain text (.txt), and presentation slides
+
+                                 * The system shall process uploaded documents using a RAG pipeline connected to LLMs
+
+                                 * The system shall allow users to tag content with topics, difficulty levels, and importance
+
+                                 * The system shall allow users to set exam dates and milestone goals for each Project
+
+3.2.3 Test Generation
+                                    * The system shall generate test questions based on the content extracted from user-uploaded materials
+
+                                    * The system shall support multiple question types:
+
+                                       * Multiple Choice Questions
+
+                                       * Open-Ended Questions (requiring text input)
+
+                                       * Simulated Oral Examination Prompts
+
+                                       * Math Problems (with LaTeX support)
+
+                                       * Feynman Technique prompts (explain concepts in simple terms)
+
+                                          * The system shall select question types based on subject matter and user preferences
+
+                                          * The system shall generate tests at appropriate difficulty levels (targeting ~85% correct answers)
+
+                                          * The system shall provide varied testing formats to support different learning styles
+
+                                          * The system shall allow users to provide feedback on test quality to improve future generation
+
+3.2.4 Study Session Workflow
+                                             * The system shall allow users to select a Project and specific topic(s) for a "studying session"
+
+                                             * The system shall require users to input intended study duration
+
+                                             * The system shall prompt users to rate their confidence level before starting
+
+                                             * The system shall administer a short (under 5 minutes) preparatory test
+
+                                             * The system shall provide a mechanism to track elapsed study time
+
+                                             * Upon completion, the system shall prompt users to rate their satisfaction and confidence
+
+                                             * The system shall generate and administer a post-session test (10-15 minutes)
+
+                                             * The system shall prompt users to estimate their performance before revealing results
+
+                                             * The system shall display results with detailed feedback and correct answers
+
+                                             * The system shall provide targeted reinforcement learning for incorrectly answered questions
+
+3.2.5 Motivation and Metacognitive Support
+                                                * The system shall allow users to document their study motivations (both intrinsic and extrinsic)
+
+                                                * The system shall display motivational prompts relevant to the user's documented goals
+
+                                                * The system shall track the gap between expected and actual performance
+
+                                                * The system shall provide metacognitive prompts to help users reflect on their learning process
+
+                                                * The system shall suggest evidence-based study techniques based on performance patterns
+
+                                                * The system shall provide a "Studying Science" resource section with curated content on effective learning techniques
+
+3.2.6 Analytics and Visualization
+                                                   * The system shall track and visualize study time through heatmaps
+
+                                                   * The system shall display performance trends across sessions and Projects
+
+                                                   * The system shall visualize the convergence between expected, perceived, and actual performance
+
+                                                   * The system shall generate a "Studying Profile" based on performance across different subjects and test types
+
+                                                   * The system shall provide insights on optimal study times and techniques based on historical data
+
+3.3 Non-Functional Requirements
+3.3.1 Performance
+                                                      * The system shall process uploaded documents within 5 minutes (for standard-sized materials)
+
+                                                      * The system shall generate tests within 30 seconds of request
+
+                                                      * The system shall support concurrent users with minimal latency
+
+                                                      * The system shall function reliably on standard internet connections
+
+3.3.2 Usability
+                                                         * The system shall have an intuitive, clean interface requiring minimal training
+
+                                                         * The onboarding process shall not exceed 15 minutes
+
+                                                         * The system shall be accessible on both desktop and mobile devices
+
+                                                         * The system shall provide clear guidance throughout the study session workflow
+
+                                                         * The system shall use gamification elements sparingly and purposefully
+
+3.3.3 Security and Privacy
+                                                            * The system shall securely store user data and uploaded materials
+
+                                                            * The system shall comply with GDPR and relevant data protection regulations
+
+                                                            * The system shall provide transparent information about data usage
+
+                                                            * The system shall allow users to export or delete their data
+
+3.3.4 Reliability
+                                                               * The system shall maintain 99% uptime
+
+                                                               * The system shall implement data backup procedures
+
+                                                               * The system shall handle errors gracefully with clear user messaging
+
+3.4 Technical Requirements and Constraints
+3.4.1 Backend Requirements
+                                                                  * The system shall use a Python-Flask backend
+
+                                                                  * The system shall implement a flexible LLM API module supporting multiple providers
+
+                                                                  * The system shall use a RAG pipeline for document processing and knowledge retrieval
+
+                                                                  * The system shall implement efficient vector storage for document embeddings
+
+                                                                  * The system shall use prompt engineering techniques to ensure quality test generation
+
+                                                                  * The system shall implement secure API endpoints for frontend communication
+
+3.4.2 Frontend Requirements
+                                                                     * The system shall use Next.js for the frontend implementation
+
+                                                                     * The system shall implement responsive design for cross-device compatibility
+
+                                                                     * The system shall use modern UI components for optimal user experience
+
+                                                                     * The system shall implement client-side validation for form inputs
+
+                                                                     * The system shall provide appropriate loading states and error handling
+
+3.4.3 Integration Requirements
+                                                                        * The system shall support calendar integration for exam scheduling
+
+                                                                        * The system shall implement webhooks for potential future integrations
+
+                                                                        * The system shall provide a documented API for potential extensions
+
+4. System Models
+4.1 User Personas
+                                                                           * Primary: University students in traditional academic systems with infrequent assessment
+
+                                                                           * Secondary: Self-directed learners seeking structure and feedback
+
+                                                                           * Tertiary: Educators looking to supplement their teaching with continuous assessment tools
+
+4.2 Use Cases
+                                                                              1. New User Onboarding: User creates account, completes initial profile, learns system basics
+
+                                                                              2. Project Creation: User creates a new Project for a course, uploads materials, sets goals
+
+                                                                              3. Study Session: User selects topic, completes pre-assessment, studies, takes post-assessment
+
+                                                                              4. Progress Review: User examines performance trends, metacognitive awareness metrics
+
+                                                                              5. Learning Technique Exploration: User browses "Studying Science" resources, implements new techniques
+
+4.3 Data Model
+                                                                                 * User: Profile information, preferences, studying profile
+
+                                                                                 * Project: Course/subject information, goals, deadlines
+
+                                                                                 * Document: Uploaded materials, processed content, embeddings
+
+                                                                                 * Session: Study duration, confidence ratings, satisfaction, test results
+
+                                                                                 * Test: Questions, answers, user responses, feedback
+
+                                                                                 * Analytics: Time tracking, performance metrics, metacognitive awareness data
+
+________________
+Backend Developer Tasks
+                                                                                    1. Environment Setup
+
+                                                                                       * Set up Flask-Python backend structure
+
+                                                                                       * Configure Docker environment
+
+                                                                                       * Set up development, testing, and production environments
+
+                                                                                       * Implement CI/CD pipeline
+
+                                                                                          2. Core API Development
+
+                                                                                             * Design and implement RESTful API endpoints
+
+                                                                                             * Implement user authentication and authorization
+
+                                                                                             * Create flexible LLM API module supporting multiple providers (Cerebras, Google Gemini)
+
+                                                                                             * Implement error handling and logging
+
+                                                                                                3. RAG Pipeline Implementation
+
+                                                                                                   * Implement document processing (PDF, DOCX, TXT, PPTX)
+
+                                                                                                   * Set up text chunking and splitting logic
+
+                                                                                                   * Implement embedding generation
+
+                                                                                                   * Set up vector storage (FAISS or ChromaDB)
+
+                                                                                                   * Create retrieval mechanisms for test generation
+
+                                                                                                      4. Test Generation Engine
+
+                                                                                                         * Develop prompt engineering for different question types
+
+                                                                                                         * Implement question generation logic
+
+                                                                                                         * Create answer validation mechanisms
+
+                                                                                                         * Develop feedback generation for incorrect answers
+
+                                                                                                         * Implement difficulty calibration
+
+                                                                                                            5. Analytics Engine
+
+                                                                                                               * Create data structures for tracking study sessions
+
+                                                                                                               * Implement performance analytics calculations
+
+                                                                                                               * Develop metacognitive awareness metrics
+
+                                                                                                               * Create studying profile generation logic
+
+                                                                                                               * Implement recommendation engine for study techniques
+
+                                                                                                                  6. Optional Features
+
+                                                                                                                     * Implement Whisper for voice recognition
+
+                                                                                                                     * Set up SesameAI for audio generation
+
+                                                                                                                     * Create calendar integration API
+
+                                                                                                                        7. Testing and Optimization
+
+                                                                                                                           * Write unit tests for core functionality
+
+                                                                                                                           * Implement integration tests
+
+                                                                                                                           * Perform load testing and optimization
+
+                                                                                                                           * Conduct security testing
+
+________________
+Frontend Developer Tasks
+                                                                                                                              1. Environment Setup
+
+                                                                                                                                 * Set up Next.js project structure
+
+                                                                                                                                 * Configure Docker environment
+
+                                                                                                                                 * Set up component library and styling approach
+
+                                                                                                                                 * Implement responsive design framework
+
+                                                                                                                                    2. Authentication and User Management
+
+                                                                                                                                       * Create login/signup flows
+
+                                                                                                                                       * Implement user profile management
+
+                                                                                                                                       * Design and implement onboarding experience
+
+                                                                                                                                       * Create settings and preferences interfaces
+
+                                                                                                                                          3. Project Management Interface
+
+                                                                                                                                             * Design and implement project creation workflow
+
+                                                                                                                                             * Create document upload and management interface
+
+                                                                                                                                             * Implement goal and deadline setting UI
+
+                                                                                                                                             * Design topic and content organization views
+
+                                                                                                                                                4. Study Session Interface
+
+                                                                                                                                                   * Create session initialization flow
+
+                                                                                                                                                   * Implement confidence and satisfaction rating UI
+
+                                                                                                                                                   * Design timer and study tracking interface
+
+                                                                                                                                                   * Create test-taking experience for different question types
+
+                                                                                                                                                   * Implement performance prediction and feedback UI
+
+                                                                                                                                                      5. Analytics and Visualization
+
+                                                                                                                                                         * Design and implement study heatmap
+
+                                                                                                                                                         * Create performance trend visualizations
+
+                                                                                                                                                         * Implement metacognitive awareness charts
+
+                                                                                                                                                         * Design studying profile visualization
+
+                                                                                                                                                            6. Resource Center
+
+                                                                                                                                                               * Create "Studying Science" resource browser
+
+                                                                                                                                                               * Implement technique recommendation interface
+
+                                                                                                                                                               * Design motivation tracking and reinforcement UI
+
+                                                                                                                                                                  7. Testing and Optimization
+
+                                                                                                                                                                     * Implement component testing
+
+                                                                                                                                                                     * Conduct usability testing
+
+                                                                                                                                                                     * Optimize for performance
+
+                                                                                                                                                                     * Ensure accessibility compliance

@@ -1,0 +1,344 @@
+﻿Bending Spoons: PurpLLE        2
+Our Idea:        2
+Contatti ed Esperti:        4
+Psicologa Dtt. Silvia D’Anna:        4
+Laura Ginestretti        4
+Giovanni Tardini        4
+Psicologa Dtt. Giulia Guidetti        4
+Professor M. D. Santambrogio        5
+Lucia Ferrari education manager        5
+Nicoletta di Blas        5
+Tracie Mackenzie        5
+Resnick (interviste):        5
+Professor Aldo Torrebruno:        6
+Mino’s Research:        8
+Competitors        11
+Limitations        12
+Your Potential Competitive Advantages        12
+Tech Stack:        14
+General:        14
+Backend:        14
+Frontend:        15
+Requirements:        15
+Sort out the signal from the noise        17
+Onboarding:        17
+Studying and session        17
+Design thinking approach:        17
+Torre Sources        19
+Carla Rinaldi (Fondazione Reggio Children)        19
+Homo Ludens by Johan Huizinga        19
+Neil Patel's Articles ("5 Techniques That Will Keep Your Customers from Defecting to the Competition" and others)        19
+"Copy This Post-Training Engagement Plan" (LearnDash)        19
+"Perché gli LMS devono evolvere in “learning engagement system”" (Docebo) and other Docebo articles        19
+Brainframes: mente, tecnologia, mercato by Derrick de Kerckhove        19
+"Do Schools Kill Creativity?" (Sir Ken Robinson)        20
+"Mainstream Games per le soft skills: dimmi come giochi a Pac-Man e ti dirò chi sei", "L’apprendimento di domani è un gioco", "Gamification in azienda: il gioco come strumento creativo e non competitivo", "Un videogioco per imparare Ideare e costruire insieme un videogame per raccontare e raccontarsi", "Game storm online sulla Proprietà Intellettuale: il racconto di una (giocosa) impresa disperata", "Il primo videogame a essere adottato come "libro di testo" scolastico" (various Italian articles)        20
+"MDA: A Formal Approach to Game Design and Game Research" and "Il modello MDA (Mechanics, Dynamics, Aesthetics)"        20
+"Serious Games. Terapie con i videogiochi" (RedBavon)        21
+
+
+Bending Spoons: PurpLLE
+The challenge: identify problems, pain points, chores and challenges that PoliMi students face in their daily life - and solve them with a multimodal LLM.
+Build a practical and useful digital tool that supports them, creating a PoC we'd be enthusiastic to use and share proudly with peers!
+Our Idea:
+Create an app/webapp that allows students to improve their studying and evaluation skills - using evidence-based scientific literature. The main objective is allowing students to engage in evaluative learning, creating a low-friction environment to test themselves appropriately. Could we call it EVA: an AI evaluator that provides feedback in different formats (active such as Feynman…).
+Also, add information and protocols to enhance focus, retention, retrieval…
+Testing/valutazione E POI controlla qual'è quella giusta. 
+Esperienza di studio con timer e POI testing. Perfetto per contare le ore che si studia e quanto sei stato bravo a studiare -> perfetto per heatmap.
+Quello che vogliamo boostare: 
+1. insegnare ed aiutare gli studenti ad autovalutarsi 
+2. dare un senso di continuità e long-term planning agli studenti 
+3. aiutare gli studenti ad apprendere come studiare, to enhance focus, retention, retrieval…
+TU SEI QUESTA APPLICAZIONE CHE STUDI, TU SEI QUELLO CHE SI VALUTA.
+Aiutare lo studente a capire cosa funziona per lui.
+Concerns: privacy and data.
+
+
+https://bendingspoons.com/technologies
+
+
+? EVA? Dip? deep: Didactics, engaging, effective & purposeful. DEEP LE, D
+________________
+Contatti ed Esperti:
+Psicologa Dtt. Silvia D’Anna:
+Importante la componente di motivazione, a sapere di più, fare meglio, raggiungere gli obiettivi. Magari scrivere le derivation delle MOTIVAZIONI DEL PERCHÈ potrebbe stimolare studio più effective e intenso.
+* Consapevolezza: Valutazione esterna ma anche interna: fai un self-assessment and evaluation prima e dopo studiato. Lab Boston, connessi con Laura Ginestretti. Lo scopo dell’app è anche far tendere a convergere i parametri EXPECTED performance, PERCEIVED performance e ACHIEVED performance.
+
+* Sistema: Anamnesi Metodo di studio ->Quanto pronto? Cosa sai? Come ti senti? Minitest -> Esperienza-> Quanto pronto? quanto satisfied? Quanto piaciuto? TEST. Com’è andata? 
+
+* Piacere e imparare, come connetterli?
+
+* Spunti per visualizzazione: grafico stats nell’onboarding, heatmap e ore di studio, grafico di convergenza expected, perceived e achieved performance.
+Laura Ginestretti
+Contatto con lab boston, performance studio.
+Giovanni Tardini
+Founder di Symboolic, sviluppano soluzioni di GenAI per aziende. Nello specifico, hanno un framework che integra Data Management, AI, Code Generation, Robotics Automation, UI/UX no code interfaces. I loro prodotti principali sono Persona, una piattaforma di GenAI per le aziende specializzabile per diversi casi d’uso; e Maieutica, un sistema che ripensa la dinamica dell'interazione uomo-macchina (quello che interessa a noi). Utilizzo responsabile dell’AI, valorizzazione del capitale cognitivo e culturale umano. AI come strumento, non sostituto.
+Utilizzando l'approccio maieutico, l'AI non si limiterebbe a valutare le risposte, ma guiderà gli studenti attraverso un processo di scoperta. L'EVA (AI Evaluator) potrebbe: Analizzare le risposte degli studenti utilizzando modelli neurali; Applicare criteri di valutazione simbolici per identificare punti di forza e debolezza; Formulare domande socratiche mirate per stimolare l'autocorrezione e l'approfondimento; Adattare il feedback al livello di comprensione dello studente.
+Psicologa Dtt. Giulia Guidetti
+asdad
+Professor M. D. Santambrogio
+Il professore è recentemente stato all’EDUCON della IEEE. Cosa ci sa dire
+Lucia Ferrari education manager
+Education Manager del Politecnico. Chiediamo contatti a Santa.
+Nicoletta di Blas
+Full Professor at Politecnico di Milano. Research interest: innovative education, educational technology. Teaching areas: Communication Skills and Educational Technology Design. Director of two masters, (1) on how to embed technology in education and (2) on digital innovation & the school system.
+Professional and teaching experience in technology-based communication for cultural heritage.
+Contatto di Santa e Capone.
+Tracie Mackenzie
+Prof svizzera education. Her areas of interest center on pedagogy and learner autonomy, skills development and sociolinguistics
+Resnick (interviste):
+Resnick in general is a great advocate for the ACTIVE use of technology as means of creation. Tra l’altro, é molto connesso a Reggio, e potremmo fare leverage sul fatto che veniamo da lì per scroccargli una call.
+MIT fireside chat with Mitch Resnick (20 min): 
+   * When considering new technologies like AI, the primary question should be What type of learning and education do we want for our children and society?
+   * Resnick contrasts the instructionist approach (using tech to deliver instruction more efficiently) with the constructionist approach (using tech to engage learners in designing, creating, and experimenting on projects based on their interests)
+   * Resnick sees generative AI as having greater potential than previous AI forms to support either the instructionist or constructionist approach, offering more choices
+   * He expresses discouragement that much of the current EdTech world is using generative AI primarily to reinforce traditional, instructionist approaches, rather than fostering needed changes towards more creative, student-driven learning: THIS IS IMPORTANT. young people to develop creative thinking, curiosity, and collaborative skills to navigate an unpredictable future.
+   * AI should be almost invisible. Not even mentioned. It should be an enabler, not a protagonist
+   * If an assignment (like writing) can be easily completed by AI (like ChatGPT), it may indicate a need to design assignments that require more personal connection, reflection, and critical thinking-tasks AI cannot replicate authentically
+   * This AI debate mirrors older debates such as the interne, social media, etcetera.
+   * AI can be framed as another resource (like Google or YouTube) that learners can control and use when working on projects, helping them find information or overcome obstacles. We want to give them a pretty direct experience, avoiding analysis paralysis.
+   * Passive vs. Active Role: The student's role within the app's core loop seems relatively passive during the "testing" phase – they consume questions generated by the AI. The active learning ("study independently") happens outside the app's direct interactive environment. Resnick advocates for technology that enables active doing and making within the tool itself.
+   * Emphasis on Learner Agency (Nuance): Resnick might acknowledge that personalized study and testing modalities could contribute to learner agency, if implemented thoughtfully. The search results support the idea that personalized feedback, in particular, can enhance self-regulated learning and motivation. If the app allows students to truly customize how they are tested and receive feedback in ways that match their individual learning styles and preferences, that could be a positive.
+   * Review of our idea given these parameters.
+NIRA Article: He emphasizes that AI should support the "creative learning spiral" (imagine, create, play, share, reflect) and his "Four P's" (Projects, Passion, Peers, Play). He also aligns with the idea that generative AI should be used as an educational resource, not as an educator.
+Professor Aldo Torrebruno:
+Dalla chiaccherata: 
+   1. Un po’ di domande da porci: Quanto è difficile declinare l’app secondo i diversi stili di studio e testing/apprendimento e apprendista? Come possiamo profilare lo studente secondo questi parametri? Come identificare le difficoltà nello studio e suggerire metodi più efficaci? Come fare l’onboarding per avere un profilo iniziale dello studente?
+
+   2. Suddivisione interna tra “Progetti/Corsi”. Per ogni progetto potremmo fare un test iniziale, un’infarinatura/primer. Tracking scadenze, heat of the day, pianificazione di auto-generated midterm, e piccoli test di continuous assessment.
+
+   3. Modello di business: entry-to-market B2C, profilazione modelli di studio e contenuti per migliorare algoritmo e vendere dati B2B?
+Inizialmente uni B2C, poi superiori B2C, poi B2C independent learning. Infine B2B dati e formazione professionale B2B.
+
+   4. Dati di profilazione studente per vettorizzare e consigliare metodi predicted on the basis of data. SELL THE VISION. IT’S the GAME. Humans are just story lovers - and some of them will look at data, like you. 
+
+   5. Incoraggiare indipendenza, autonomia e consapevolezza. Per compensare il tradeoff tra structure and flexibility, fare leverage on the personal commitment to knowledge/skills/end goal/motivations to study.
+
+   6. Esperienza POC: Quante ore e quando studi? Integrazione calendars? Sessioni di focus. Accompagnamento verso l’esame.
+
+   7. Onboarding: gamification. Animazione della creazione del grafico stats asse per asse, come graph di obsidian. Crealo strutturato e delizioso, non avere paura di renderlo preciso, è commitment verso lo studio.
+
+   8. Demo da Bending: deve essere goloso: fai vedere uno scarso vs uno bravo che si confrontano su un test. Fai vedere la golosità del market.  numeri studenti poli, numero studenti milano, numeri studenti lombardi, etc…
+
+   9. METID: AI enhanced.
+________________
+
+
+Mino’s Research:
+Ciao Mino, sono Pietro, il tuo cuor di panino. Potresti porre grande attenzione anche sul problema che vogliamo risolvere? Il nostro focus sono gli studenti universitari. Penso che la direzione giusta sia: disegnare una didattica più efficace.
+
+
+Ok, ho trovato ste robe:
+- 1) TESTING: universalmente efficace, dovrebbe essere centrale in ogni applicativo di apprendimento personalizzato.
+- ⁠ 2) RIPETIZIONE SPAZIATA: efficace, basi neurobiologiche consolidate
+- 3) USO DELL’IA: studio da reattivo (correzione errori) a proattivo (prevenzione lacune)
+- 4) GAMIFICATION : modifica circuiti motivazionali, rendendo lo studio più efficace.
+
+
+COMPETITORS 
+- ANKI (flashcards(FS); 1,4) - 2006, ST
+- ⁠BRAINSCAPE (FS adattive && modificabili; 1,4) - 2007, ST
+- ⁠SYNAP: più affine a noi:
+Spaced Repetition Learning System: Utilises advanced algorithms to optimise learning efficiency.
+Personalised Learning: Tailors learning experiences based on user performance and preferences. (*Dunque è lui che si adadda a user, non vvsa*)
+Educational Analytics: Provides insights into learning progress and identifies areas for improvement.
+(Per educatori però, non è StoS)
+&& Braynr : studio, no testing, solita sbobba
+
+
+PROBLEMATICHE GENERALI
+- Dipendenza Tecnologica (non un nostro problema secondo il concept)
+- ⁠Qualità dei Contenuti (uploadati dall’utente, quindi OK se si hanno gli appunti, else…)
+- ⁠Privacy (eh vb ormai si vende l’anima al diavolo)
+- ⁠Digital divide (saremmo in un ambiente universitario, quindi non un problema)
+
+
+Spunti interessanti:
+- Apprendimento adattivo su base predittiva (spunto interessante)
+- ⁠Piattaforme integrative: strumenti che non sostituiscono il metodo di studio ma lo insegnano, promuovendo metacognizione. (OMG yes quello che vogliamo fare)
+-AR e VR: apprendimento esperienziale diretto (volendo simulazioni di interrogazioni, non male come idea)
+
+
+S= studente    T=teacher    W=work environment
+—————————————————————————
+METODI DI APPRENDIMENTO
+      * CINESTESIA = apprendimento coinvolgendo il corpo e i sensI
+      (Eg metodo Fernald = Σ(lettura,gesti,linguaggio))
+      ❌- inutile per il nostro proj
+      * VISIVA = mappe e schemi, palazzo mentale 
+       ✅-utilizzabile 
+      * UDITIVA = podcast/lettura frontale 
+       ✅-molto utilizzabile
+
+
+-> QUINDI????
+AKA: Gli spunti però sono buoni e il terreno è fertile per un attecchimento vero e proprio del prodotto
+ANALISI  DI MERCATO CAFONA:
+- dell’e-learning è stato valutato a circa 250 miliardi di USD nel 2023 e si prevede che raggiungerà 1.000 miliardi di USD entro il 2032, con un tasso di crescita annuale composto (CAGR) del 16%
+- Apprendimento adattivo: Le piattaforme utilizzano l’IA per adattare i contenuti in tempo reale alle esigenze dello studente (MA NON SPINGE LO STUDENTE ALLA SPERIMENTAZIONE PERSONALE)
+SVILUPPI FUTURI CAFONI
+•        Tutor virtuali: Implementazione di assistenti virtuali che forniscono supporto personalizzato. 
+(Come noi, quindi in questo caso siamo tra gli squali)
+•        Analisi predittiva: Utilizzo di dati per prevedere le prestazioni degli studenti e intervenire proattivamente. 
+_QUESTO CARINO, si può pensare di introdurre una roba piccola che lo faccia_
+________________
+Competitors
+StudySmarter (https://www.studysmarter.co.uk)
+      * What they do: An AI-powered learning app for university and school students. Features include AI-generated flashcards from notes, mock exams, explanations, spaced repetition, study planning, and community-created study sets[2].
+      * Competitive Advantages: Strong AI integration for automated content creation (flashcards, exams), combines multiple study tools (notes, flashcards, planner, testing) in one platform, large existing user base and content library[2]. Uses scientifically-proven techniques like spaced repetition[2].
+      * Limitations: While using AI, the personalization might focus more on content adaptation and exam prep rather than deeply analyzing learning styles across subjects to recommend specific study techniques. May not fully capture the nuanced "Studying Profile" concept or focus as heavily on structured, continuous self-assessment for long-term retention outside of immediate exam cycles. Subject to general AI limitations like potential bias or errors[7, 15, 20].
+EdApp (https://whatfix.com/blog/adaptive-learning-platforms/)
+      * What they do: A learning portal using AI for personalized learning experiences, progress tracking, AI course creation tools, and a spaced repetition feature called "Brain Boost" for follow-up tests[1].
+      * Competitive Advantages: Specific "Brain Boost" feature directly targets retention via spaced testing[1]. Includes AI tools potentially useful for course authors (might imply adaptability for different content types)[1]. Tracks both digital and in-person training (less relevant here)[1].
+      * Limitations: Appears primarily oriented towards corporate training initiatives (L&D teams) rather than individual university students managing their own diverse coursework[1]. May lack features tailored to academic structures like exam planning or integrating university-specific materials easily for self-testing.
+Todait (https://amberstudent.com/blog/post/the-best-study-planning-apps-for-students)
+      * What they do: A study planning app that tracks study time, provides progress reports via graphs, and notably features automatic adjustment of study plans based on student performance and schedule changes[4]. Used for major exam prep (ACTs, etc.)[4].
+      * Competitive Advantages: Unique selling point is the adaptive planning feature, automatically adjusting schedules based on performance, aligning with dynamic study needs[4]. Strong focus on progress visualization and time tracking[4].
+      * Limitations: Primarily a planner with adaptive scheduling capabilities[4]. Likely lacks deep AI-driven testing features, automated content generation (like flashcards from notes), or personalized recommendations for how to study based on learning style analysis. Focus seems more on scheduling/tracking than the testing and learning science aspects of your vision.
+      * Khan Academy (https://www.coursebox.ai/blog/best-personalized-learning-platforms)
+      * What they do: A free educational platform offering a vast library of video lessons, interactive exercises, and quizzes across many subjects. It provides personalized learning paths based on student performance[12].
+      * Competitive Advantages: Extensive library of high-quality, expert-created content[12]. Proven model of personalized learning paths adapting to student pace and understanding[12]. Completely free, making it highly accessible[12].
+      * Limitations: Primarily focused on K-12 subjects, potentially lacking depth/specificity for university-level courses[12]. Relies on its own content library; less suited for students needing to test themselves continuously on their specific lecture notes, university materials, or niche subjects. Less emphasis on integrating user-specific planning, custom test schedules, or providing insights into different studying techniques.
+Limitations
+Based on the analysis, common limitations across competitors relative to your vision include:
+      * Limited Scope of Personalization: Often focus on adapting content difficulty or scheduling, rather than analyzing learning patterns across subjects/modalities to recommend specific, evidence-based study techniques based on a deep user profile[User Idea vs. 2, 4].
+      * Fragmented Tooling: Many apps specialize in one area (planning[4], flashcards[2], institutional assessment[5]) rather than offering an integrated suite for continuous self-testing, planning, learning science insights, and deep personalization.
+      * Lack of Focus on Independent, Continuous Self-Assessment: Many are geared towards exam prep[2, 4], K-12[12], corporate training[1], or formal teacher/institution-led assessment[5], rather than empowering university students for ongoing, self-directed learning accountability, especially in systems without built-in continuous assessment[User Idea].
+      * Superficial Self-Regulated Learning Support: May offer planning[2, 4], but often lack integrated features to explicitly support the full cycle of planning, monitoring (e.g., heatmaps), and reflecting on study strategy effectiveness[User Idea].
+      * General AI/Platform Limitations: Subject to potential issues like AI bias/errors[7, 15, 20], data privacy concerns[6, 18], potential for depersonalization or reduced human connection[6, 7, 13, 20], connectivity issues[5], and the need for high-quality input data/content[6]. Adaptive platforms can sometimes feel discouraging or lack context[14].
+Your Potential Competitive Advantages
+Your app could differentiate itself by focusing on:
+      * Deep, Nuanced Personalization of Study Techniques: Utilizing AI to build detailed "Studying Profiles" that analyze performance across subjects and test modalities to recommend specific, evidence-based how-to-study strategies, not just adapting content difficulty[User Idea].
+      * Integrated Self-Regulated Learning (SRL) Framework: Combining continuous self-testing, adaptive planning, progress monitoring (heatmaps), reflection prompts, and a curated "Studying Science" resource hub within one platform to actively guide students through effective learning cycles[User Idea].
+      * Focus on Long-Term Retention & Combating Cramming: Explicitly positioning the app as a tool for building lasting knowledge through structured, continuous assessment and feedback loops, moving beyond short-term exam prep[User Idea].
+      * Holistic & Integrated Platform: Providing a single, streamlined solution that integrates the key components university students need for effective, independent, continuous learning (testing, planning, learning insights, personalization)[User Idea].
+      * Targeted Solution for Underserved Needs: Directly addressing the challenges faced by students in educational systems lacking frequent feedback loops and simplifying the difficult process of consistent, effective self-testing[User Idea].
+      * (Potential) Superior Adaptive Engine: Developing AI that excels at creating dynamic, motivating learning paths that effectively target weaknesses without causing discouragement, potentially incorporating gamification thoughtfully[1, 9, 10].
+________________
+
+
+Tech Stack:
+RASD
+General:
+      * Understand requirements of the app. Core functionalities and stuff.
+      * Design a basic app structure (modules and stuff)
+      * Design a basic UI.
+Backend:
+      * Search for any pre-existing template for this app
+      * Setup Flask-Python Backend
+      * define flexible APIs with ABCs for tools you could switch between, like the LLM provider. (see litellm)
+      * Setup Dockerfile and Docker
+      * RAG: start with LangChain, 
+      * basic recursive text splitting for PDFs, 
+      * a standard embedding model (e.g., from Hugging Face or OpenAI), 
+      * in-memory vector store (like FAISS or ChromaDB initially) for speed of setup. You can swap components later. 
+      * Focus on the pipeline: Load -> Split -> Embed -> Store -> Retrieve -> Augment Prompt -> Generate.
+      * Prompt Engineering: Crucial
+      * test this loop (Backend API -> LLM Module -> RAG -> Prompt -> LLM -> Response). 
+      * Treat prompt engineering as continuous R&D.
+      * OPT: Whisper
+      * OPT: SesameAI
+Frontend:
+      * Setup Next.js
+      * Setup Dockerfile
+      * Ensure you define the API contract (endpoints, request/response schemas) clearly between backend and frontend.
+Requirements:
+
+
+________________
+
+
+Unordered tools list: SesameAI voice, Whisper voice-recognition, Multimodal LLM, Cerebras/Groq, RAG: LangChain, accurate prompts to obtain the right outputs, prompt engineering, chatbot preset, flask-python backend, TS frontend (react). Docker.
+One of the points I want to make clear is that this app SHOULD NOT work as a free-form chatbot. It is a curated evaluative learning tool, to enhance studying and focus, and avoid the endless possibilities of chatting with an LLM. It is not rigid, but does not allow fucking around.
+I'd approach the task like this, give me a feedback:
+      1. Start with implementing the backend with python. This is the most short-term mantainable choice, and iteration seems quite easy with it. Furthermore, there are plenty of libraries and frameworks for AI apps. Keep the full implementation of the business logic as the last step, seeing the former ones as tests.
+      1. Start with setting up the Flask-Python backend.
+      2. Find/implement a flexible LLM API module, so I can switch between APIs to try and choose the best for my task. The apis I’m considering are: Cerebras (i have free tokens) and Google with  Gemini Pro 2.5.
+      3. Implement the RAG module, and understand if LoRA is useful in this case or would be redundant/useless. 
+      4. Engineer some useful prompts for the generation of simple and elaborate quizzes. If everything works up to now, this would work as the ITERATION 1.
+      5. OPT: Implement the Whisper module, to transcribe spoken audio.
+      6. OPT: Implement the SesameAI module, to generate spoken audio.
+      2. Go with a TS Next.js frontend.
+Containerizing would be amazing, but not absolutely necessary. Still, it would ease development for me and my colleague.
+________________
+Sort out the signal from the noise - PurpLLE w/ PurpLLM
+Our mission is to reduce the friction of effective, continuous learning. Not substituting, not automating, but designing an effective environment for different learners to thrive in.
+Divisione in tre pilastri principali:
+      * WHAT: cosa  studi? studio e planning
+      * WHY: perché studi? motivazione intrinseca ed estrinseca
+      * HOW: come stai studiando? valutazione interna ed esterna
+Onboarding:
+Non troppo lungo, max 15 minuti. Dev’essere un gamified development di un profilo learner: come studi? perché studi? cosa studi? Storico, preferenze, migliorare performance. Icona app tipo perplexity
+Studying and session
+Come superare le criticità della valutazione da parte di un LLM?
+Design thinking approach:
+Step 0: Find the problem
+I'm interested in the fundamental challenges of humans in engaging in learning—but in order to identify the ones which are useful to me, I'd like to use a top-down approach. In other words, I'd like to understand the current system/environment for learners, and then start questioning which problems arise and why. Right now, my thoughts are directed at Italian university students. The university system in Italy usually features two semesters, each of these organized in a lessons period of around four months, and an exam session of around 1 month and a half. Students should attend "passive" (traditional) lessons for six different exams at the same time during the lessons period, and then sit 6 exams with different modalities during the exams session—on top of possible final projects assigned by professors. My assumption is that this system is almost the opposite to one that truly supports and teaches to be a lifelong learner; which would implement structured continuous assessment, active learning, projects, and in general test and aim at improving all facets of competence: memory, understanding, application, exploration—knowledge, know-how, and creation of knowledge. I'd be super interested in changing the system, but it is not what I'm exploring right now—as there are many social, economical, structural barriers that keep this system as described. Most students do not enjoy this university system, finding it less than ideal (even though we do have extensive literature on the matter, we have not changed it to accommodate human-learning, in all its expressions). This often leads to studying "for the exam" instead of viewing the act of studying as a component to learning and improvement: lessons are skipped, choosing to study on slides or video-lessons; cramming is almost incentivized, and long-term retention is not. We are not robots; learning shouldn't be our only obsession, but we need it to adapt; and attending an university without learning, and learning to learn, is exceptionally useless. Students don't identify as learners, but as students. And learning is not a problem limited to academic campuses: in a constantly changing world, the art of learning is our most important endeavour. We could argue that the creation, exploration and communication of knowledge and know-how are the key differentiators for humans as a species: we are actively creating new chaos and new order from it.
+Step 1: Empathize
+Indaga le difficoltà vissute da chi ha esperienza del problema, e 
+Step 3:
+________________
+
+
+Torre Sources
+Carla Rinaldi (Fondazione Reggio Children)
+Children as active constructors of knowledge, importance of relationships and collaboration, the learning environment as a co-constructed space between children and adults.
+Homo Ludens by Johan Huizinga
+Exploration of play as a fundamental element of culture and human life. Play is voluntary, separate from "real" life, bound by rules, creates order, involves tension, and is intrinsically enjoyable. How can our app provide something more than traditional studying?
+Neil Patel's Articles ("5 Techniques That Will Keep Your Customers from Defecting to the Competition" and others)
+Know your customer, know your competition, emphasize your unique selling proposition (USP), increase customer spending (upselling), incentivize action, provide excellent customer service.
+"Copy This Post-Training Engagement Plan" (LearnDash)
+Engaging learners after training to reinforce knowledge and skills. Use a variety of methods (community forums, challenges, personalized support) to keep learners involved and applying what they've learned.
+If they feel that there is something of value that they can utilize in their study, then they are more likely to continue using the services you provide.
+"Perché gli LMS devono evolvere in “learning engagement system”" (Docebo) and other Docebo articles
+The evolution of Learning Management Systems (LMS) into Learning Engagement Systems, more focused on user engagement, personalization, and continuous learning. Social learning, personalized learning paths, gamification, mobile learning, blended learning, data analytics.
+Brainframes: mente, tecnologia, mercato by Derrick de Kerckhove
+      * Focus: The impact of technology on the human mind and society.
+
+      * Key Themes: Technology shapes our cognitive processes, the rise of a "connected intelligence" through networks, the importance of understanding the interplay between technology and culture.
+
+      * Relevance to Your Project: This is a good way to see how technology and culture shape customer actions and desires.
+
+"Do Schools Kill Creativity?" (Sir Ken Robinson)
+         * Focus: Argues that traditional education systems often stifle creativity and fail to recognize diverse talents.
+
+         * Key Themes: The importance of creativity in education, the need to rethink our view of intelligence, and the value of personalized learning.
+
+         * Relevance to Your Project: Provides further background on the need to engage students in analytical thinking.
+
+"Mainstream Games per le soft skills: dimmi come giochi a Pac-Man e ti dirò chi sei", "L’apprendimento di domani è un gioco", "Gamification in azienda: il gioco come strumento creativo e non competitivo", "Un videogioco per imparare Ideare e costruire insieme un videogame per raccontare e raccontarsi", "Game storm online sulla Proprietà Intellettuale: il racconto di una (giocosa) impresa disperata", "Il primo videogame a essere adottato come "libro di testo" scolastico" (various Italian articles)
+            * Focus: The use of games and game-like mechanics in education and training.
+
+            * Key Themes: Games can be engaging and motivating, can be used to develop soft skills, and can make learning more interactive and fun.
+
+            * Relevance to Your Project: They may have value in understanding why games can help learning new skills, or why they may stifle them.
+
+"MDA: A Formal Approach to Game Design and Game Research" and "Il modello MDA (Mechanics, Dynamics, Aesthetics)"
+               * Focus: A framework for analyzing and designing games based on Mechanics, Dynamics, and Aesthetics.
+
+               * Key Themes: Understanding how game mechanics create dynamic gameplay experiences and evoke emotional responses in players.
+
+               * Relevance to Your Project: The design behind the framework can help improve the understanding of how games can stimulate critical and analytical thinking.
+"Serious Games. Terapie con i videogiochi" (RedBavon)
+                  * Focus: Using video games for therapeutic purposes, including mental health.
+
+                  * Key Themes: Serious games can increase engagement, extend the reach of online programs, and provide therapeutic benefits.
+
+                  * Relevance to Your Project: It is necessary to be aware of both "serious games" and "gamification" to understand how games help in education.
+> Resnick’s linkedin
+> Carla Rinaldi: Fondazione Ricerca Educazione Bimbi Reggio
+> Homo ludens, di Johan Huizinga, traduzione di Corinna von Schendel, Milano: Il Saggiatore, 1967 
+“Serious games. Terapie con i videogiochi”, su RedBavon, 2016 - https://redbavon.wordpress.com/2016/11/30/serious-games-terapie-con-i-videogiochi/  [Ottobre 2024]
+“5 Techniques That Will Keep Your Customers from Defecting to the Competition”, di Neil Patel, 2028. 
+> “Copy This Post-Training Engagement Plan", di Justin Ferriman, LearnDash, 2019. 
+> "Perché gli LMS devono evolvere in “learning engagement system”", di Reanna Mardinger, Docebo, 2017. https://www.docebo.com/it/blog/perche-gli-lms-devono-evolvere-in-learning-engagement-system
+“Brainframes: mente, tecnologia, mercato”, di Derrick de Kerckhove, trad. it a cura di B. Bassi, Baskerville, 1993. (altro capolavoro fondativo)
+> “Do Schools Kill Creativity?”, di Sir Ken Robinson, Ted, 2006. https://www.ted.com/talks/sir_ken_robinson_do_schools_kill_creativity
+"Mainstream Games per le soft skills: dimmi come giochi a Pac-Man e ti dirò chi sei", di Matteo Uggeri, Blog Skilla, 2020. https://www.skilla.com/blog/mainstream-games-per-le-soft-skills-dimmi-come-giochi-a-pac-man-e-ti-diro-chi-sei_3203/
+"L’apprendimento di domani è un gioco", di Giacomo Golinelli, IMpact School, 2018. https://magazine.impactscool.com/future-society/lapprendimento-di-domani-e-un-gioco/
+"MDA: A Formal Approach to Game Design and Game Research", di Robin Hunicke, Marc LeBlanc e Robert Zubek, su Proceedings of the 2nd International Conference on Design and Digital Communication, Digicom, 2004. https://www.researchgate.net/publication/228884866_MDA_A_Formal_Approach_to_Game_Design_and_Game_Research
+"Il modello MDA (Mechanics, Dynamics, Aesthetics)", di Ciro Continisio, HTML.IT, 2014. https://www.html.it/pag/46231/il-modello-mda-mechanics-dynamics-aesthetics/
+"Gamification in azienda: il gioco come strumento creativo e non competitivo", di Matteo Uggeri, Blog Skilla, 2017. https://www.skilla.com/blog/gamification-in-azienda-il-gioco-come-strumento-creativo-e-non-competitivo_152/
+"Un videogioco per imparare Ideare e costruire insieme un videogame per raccontare e raccontarsi", di Luca Roncella e Matteo Uggeri, su "", Rivista Bricks, 2018. http://www.rivistabricks.it/wp-content/uploads/2018/12/2018_5_06_Roncella.pdf
+"Game storm online sulla Proprietà Intellettuale: il racconto di una (giocosa) impresa disperata", a cura di Matteo Uggeri e Filippo Silipigni, con Laura Arrigoni e Angela Grasso, Rivista Bricks, 2020.
+"Il primo videogame a essere adottato come "libro di testo" scolastico", di Luca Francescangeli, Wired, 2020 https://www.wired.it/gadget/videogiochi/2020/06/23/il-primo-videogame-a-essere-adottato-come-libro-di-testo-scolastico/

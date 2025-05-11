@@ -1,0 +1,200 @@
+# PurpLLE Project Development Guide
+
+## Current Implementation Status
+
+We have implemented several core components of the learning environment:
+
+1. **Project Management**
+   - Dashboard (`/dashboard`) with project overview
+   - Projects listing (`/projects`)
+   - Individual project view (`/projects/[projectId]`)
+   - Project creation form (`/projects/new`)
+
+2. **Learning Sessions**
+   - Session creation form (`/projects/[projectId]/session/new`)
+   - Basic session workflow structure
+
+3. **Data Models**
+   - Complete TypeScript interfaces in `src/lib/types/project.ts`
+   - Mock data structure for development
+
+## Next Steps
+
+### 1. Component Implementation Priority
+
+1. **Document Management**
+   ```typescript
+   // Implement in src/components/documents/
+   - DocumentUploader: Handle file uploads with category selection
+   - DocumentViewer: Display document content
+   - DocumentList: List and manage uploaded documents
+   ```
+
+2. **Learning Session Flow**
+   ```typescript
+   // Implement in src/app/sessions/[sessionId]/
+   - pre-assessment/page.tsx: Initial knowledge check
+   - study/page.tsx: Main study interface
+   - post-assessment/page.tsx: Final evaluation
+   ```
+
+3. **Analytics Components**
+   ```typescript
+   // Implement in src/components/analytics/
+   - PerformanceChart: Visualize learning progress
+   - StudyPatterns: Show study habits and patterns
+   - MetacognitiveAwareness: Track self-assessment accuracy
+   ```
+
+### 2. Styling Guidelines
+
+1. **Component Structure**
+   ```typescript
+   // Follow this pattern for new components
+   "use client"
+   
+   import { type FC } from 'react'
+   import { ComponentProps } from './types'
+   
+   export const Component: FC<ComponentProps> = ({ prop1, prop2 }) => {
+     return (
+       <div className="space-y-4">
+         {/* Use space-y-{n} for vertical spacing */}
+         {/* Use gap-{n} for flex/grid gaps */}
+       </div>
+     )
+   }
+   ```
+
+2. **Tailwind CSS Patterns**
+   - Use `space-y-{n}` for vertical spacing between elements
+   - Use `gap-{n}` for flex/grid gaps
+   - Use responsive prefixes: `md:`, `lg:` for breakpoints
+   - Use `text-muted-foreground` for secondary text
+   - Use `bg-muted` for subtle backgrounds
+
+3. **ShadCN Component Usage**
+   ```typescript
+   // Import pattern for shadcn components
+   import {
+     Component,
+     ComponentContent,
+     ComponentTrigger
+   } from "@/components/ui/component"
+   ```
+
+### 3. State Management
+
+1. **Server Actions**
+   ```typescript
+   // Implement in src/lib/actions/
+   - project-actions.ts: Project CRUD operations
+   - document-actions.ts: Document management
+   - session-actions.ts: Session workflow
+   ```
+
+2. **Data Fetching**
+   ```typescript
+   // Replace mock data with actual API calls
+   const fetchProjects = async () => {
+     // Implement API calls
+     // Replace mockProjects in components
+   }
+   ```
+
+### 4. Testing Strategy
+
+1. **Component Tests**
+   ```typescript
+   // Add tests in __tests__ directories
+   import { render, screen } from '@testing-library/react'
+   import { Component } from '../component'
+   
+   describe('Component', () => {
+     it('renders correctly', () => {
+       render(<Component />)
+       // Add assertions
+     })
+   })
+   ```
+
+2. **Integration Tests**
+   - Focus on session workflow
+   - Test document upload/processing
+   - Test analytics generation
+
+### 5. Performance Considerations
+
+1. **Code Splitting**
+   ```typescript
+   // Use dynamic imports for heavy components
+   const HeavyComponent = dynamic(() => import('./heavy-component'), {
+     loading: () => <LoadingSpinner />
+   })
+   ```
+
+2. **Image Optimization**
+   - Use Next.js Image component
+   - Implement lazy loading
+   - Optimize assets
+
+### 6. Accessibility Guidelines
+
+1. **Component Requirements**
+   - Ensure proper ARIA labels
+   - Maintain keyboard navigation
+   - Support screen readers
+
+2. **Color Contrast**
+   - Use Tailwind's color palette
+   - Test with accessibility tools
+
+## Project Structure Maintenance
+
+```plaintext
+src/
+├── app/                    # Next.js app router pages
+├── components/            
+│   ├── ui/                # Shadcn components
+│   ├── projects/          # Project-related components
+│   ├── sessions/          # Learning session components
+│   ├── documents/         # Document management
+│   └── analytics/         # Data visualization
+├── lib/
+│   ├── actions/           # Server actions
+│   ├── types/             # TypeScript interfaces
+│   └── utils/             # Helper functions
+└── tests/                 # Test files
+```
+
+## Best Practices
+
+1. **Component Creation**
+   - Use TypeScript interfaces for props
+   - Implement error boundaries
+   - Add loading states
+   - Include proper documentation
+
+2. **Code Quality**
+   - Follow ESLint rules
+   - Use Prettier for formatting
+   - Write meaningful commit messages
+   - Document complex logic
+
+3. **Performance**
+   - Minimize client-side JavaScript
+   - Optimize images and assets
+   - Use proper caching strategies
+   - Monitor bundle size
+
+## Next Priorities
+
+1. Implement document upload and processing
+2. Complete the learning session workflow
+3. Add analytics and visualization components
+4. Replace mock data with actual API integration
+5. Add comprehensive testing
+6. Implement user authentication
+7. Add error handling and recovery
+
+Remember to maintain the project's philosophy of reducing friction for effective learning while implementing these components.

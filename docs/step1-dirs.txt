@@ -1,0 +1,141 @@
+# PurpLLE Implementation Guide
+
+## Project Overview
+PurpLLE (Purposeful Lifelong Learning Environment) is a Next.js 13+ application with TypeScript, using the App Router pattern. The project aims to create an effective learning environment focused on self-assessment and continuous learning.
+
+## Directory Structure Overview
+
+### Core Application Routes (`src/app/`)
+- **/dashboard**: Main user interface after authentication
+- **/auth**: Authentication flows (login, register, password recovery)
+- **/projects**: Project management and viewing
+- **/sessions**: Learning session workflows
+- **/api**: Backend API routes
+
+### Component Implementation Priority
+
+1. **Core Layout Components** (`src/components/layout/`)
+   - `main-layout.tsx`: Implement the base layout wrapper
+   - `header.tsx`: Navigation and user controls
+   - `sidebar.tsx`: Context-aware navigation
+   - `footer.tsx`: App information and secondary navigation
+
+2. **Project Components** (`src/components/projects/`)
+   - `project-card.tsx`: Individual project display
+   - `project-list.tsx`: Project grid/list view
+   - `project-form.tsx`: Creation/editing form
+   - `milestone-timeline.tsx`: Visual timeline
+   - `progress-metrics.tsx`: Performance visualization
+
+3. **Session Components** (`src/components/sessions/`)
+   - `session-timer.tsx`: Study session countdown
+   - `confidence-meter.tsx`: Self-assessment tool
+   - `session-summary.tsx`: Post-session overview
+   - `progress-tracker.tsx`: Session progress visualization
+
+4. **Document Components** (`src/components/documents/`)
+   - `document-uploader.tsx`: File upload interface
+   - `document-list.tsx`: Resource management
+   - `document-viewer.tsx`: Content display
+   - `document-categorizer.tsx`: Resource/Test categorization
+
+## Implementation Guidelines
+
+### 1. UI Components
+- Use ShadcnUI components from `src/components/ui/`
+- Follow mobile-first responsive design
+- Implement proper loading and error states
+- Use Tailwind CSS for styling
+
+### 2. Data Flow
+- Server Components: Use for initial data fetching
+- Server Actions: Implement in `src/lib/actions/` for data mutations
+- Client Components: Mark with 'use client' only when necessary
+
+### 3. Type Safety
+- All types are defined in `src/lib/types/`
+- Extend interfaces rather than creating new ones
+- Use strict TypeScript checking
+
+### 4. State Management
+- Use React Server Components where possible
+- Implement hooks from `src/lib/hooks/` for shared logic
+- Follow the defined workflows in `.cursorrules`
+
+## Key Workflows to Implement
+
+### Project Creation Flow
+1. Project basic info (`projects/new/page.tsx`)
+2. Milestone setting
+3. Document upload and categorization
+4. Motivation documentation
+
+### Learning Session Flow
+1. Pre-assessment (`sessions/[sessionId]/pre-assessment/page.tsx`)
+2. Study period (`sessions/[sessionId]/study/page.tsx`)
+3. Post-assessment (`sessions/[sessionId]/post-assessment/page.tsx`)
+
+## Implementation Priorities
+
+1. **Authentication System**
+   - Implement auth routes in `src/app/auth/`
+   - Set up middleware protection
+   - Create user session management
+
+2. **Project Management**
+   - Implement CRUD operations
+   - Set up document handling
+   - Create milestone management
+
+3. **Learning Sessions**
+   - Build session workflow
+   - Implement assessment system
+   - Create progress tracking
+
+4. **Analytics**
+   - Implement performance metrics
+   - Create visualization components
+   - Set up progress tracking
+
+## Best Practices
+
+1. **Component Structure**
+```typescript
+// Template for new components
+import { type FC } from 'react'
+import { type ComponentProps } from '@/lib/types'
+
+export const ComponentName: FC<ComponentProps> = ({ prop1, prop2 }) => {
+  // Implementation
+}
+```
+
+2. **Error Handling**
+- Implement error boundaries
+- Use proper error states in components
+- Add meaningful error messages
+
+3. **Loading States**
+- Add Suspense boundaries
+- Implement skeleton loaders
+- Show progress indicators
+
+4. **Testing**
+- Add unit tests for utilities
+- Create component tests
+- Implement integration tests for workflows
+
+## Getting Started
+
+1. Review the `.cursorrules` file for detailed requirements
+2. Set up your development environment
+3. Start with layout components
+4. Implement core features progressively
+5. Follow the TypeScript interfaces in `src/lib/types/`
+
+## Additional Notes
+
+- All API routes should be implemented in `src/app/api/`
+- Use the utility functions in `src/lib/utils/`
+- Follow the error handling patterns in dashboard components
+- Implement proper loading states as shown in `src/app/dashboard/loading.tsx`
