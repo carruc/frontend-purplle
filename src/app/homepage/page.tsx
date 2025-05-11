@@ -80,7 +80,7 @@ const mockProjects: Project[] = [
   }
 ]
 
-export default function Dashboard() {
+export default function Homepage() {
   const router = useRouter()
 
   const handleProjectClick = (projectId: string) => {
@@ -97,7 +97,7 @@ export default function Dashboard() {
           </p>
         </div>
         <Link href="/projects/new">
-          <Button>
+          <Button variant="solid">
             <Plus className="h-4 w-4 mr-2" />
             New Project
           </Button>
@@ -110,4 +110,4 @@ export default function Dashboard() {
       />
     </div>
   )
-}
+} 

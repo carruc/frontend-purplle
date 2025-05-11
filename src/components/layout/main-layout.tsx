@@ -1,7 +1,5 @@
 import { type ReactNode } from 'react'
-import { Header } from './header'
 import { Sidebar } from './sidebar'
-import { Footer } from './footer'
 
 interface MainLayoutProps {
   children: ReactNode
@@ -10,16 +8,15 @@ interface MainLayoutProps {
 export const MainLayout = ({ children }: MainLayoutProps) => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      <Header />
       <div className="flex-1 flex">
         <Sidebar />
         <main className="flex-1 p-6">
-          <div className="container mx-auto">
-            {children}
-          </div>
+          {children}
         </main>
       </div>
-      <Footer />
+      <footer className="py-6 text-center text-sm text-muted-foreground border-t">
+        <p>Purposeful Lifelong Learning Environment</p>
+      </footer>
     </div>
   )
 }

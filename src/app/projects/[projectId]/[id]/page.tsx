@@ -93,7 +93,7 @@ export default function ProjectPage() {
     <div className="space-y-8">
       <div className="flex items-start justify-between">
         <div className="flex items-start gap-4">
-          <Link href="/dashboard">
+          <Link href="/homepage">
             <Button variant="ghost" size="icon">
               <ArrowLeft className="h-4 w-4" />
             </Button>

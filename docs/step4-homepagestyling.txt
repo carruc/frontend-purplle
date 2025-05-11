@@ -1,0 +1,163 @@
+# PurpLLE Frontend Development Guide
+
+## Recent Changes & Current State
+
+1. **Navigation Structure**
+   - Removed traditional header/navbar in favor of a sidebar-based navigation
+   - Homepage is now the default route (`/homepage`)
+   - Dashboard references have been removed throughout the codebase
+
+2. **Core Layout**
+   - Main layout uses a sidebar + content structure
+   - Sidebar contains:
+     - Logo
+     - Homepage button
+     - Search functionality
+     - Project list
+   - Content area stretches to fill available space
+
+## Development Guidelines
+
+### 1. Component Implementation
+
+#### Component Organization
+- Place new components in the appropriate subdirectory under `src/components/`:
+  - `ui/`: Reusable UI components
+  - `layout/`: Layout-related components
+  - `projects/`: Project-specific components
+  - `sessions/`: Learning session components
+  - `questions/`: Question and assessment components
+  - `analytics/`: Data visualization components
+  - `documents/`: Document management components
+
+#### Component Structure
+```typescript
+// Template for new components
+import { type ComponentProps } from "@/lib/types"
+
+interface ExampleComponentProps {
+  // Define strict TypeScript interfaces
+}
+
+export const ExampleComponent = ({ prop1, prop2 }: ExampleComponentProps) => {
+  // 1. Hooks and state
+  // 2. Derived values
+  // 3. Event handlers
+  // 4. Render
+}
+```
+
+### 2. Styling Guidelines
+
+1. **Use Tailwind CSS Exclusively**
+   - Follow mobile-first approach
+   - Use Tailwind's built-in responsive prefixes
+   - Example structure:
+   ```tsx
+   <div className="
+     flex flex-col     // Base styles
+     items-center      // Alignment
+     gap-4            // Spacing
+     p-4 md:p-6      // Responsive padding
+     bg-background    // Colors using theme
+   ">
+   ```
+
+2. **Component Styling**
+   - Use ShadcnUI components as base
+   - Extend using Tailwind classes
+   - Follow dark mode compatibility
+
+### 3. Data Models & TypeScript
+
+Use the established data models in your components:
+
+```typescript
+import { type Project, type LearningSession, type Milestone } from "@/lib/types"
+
+// Example component props
+interface ProjectCardProps {
+  project: Project
+  onSelect?: (projectId: string) => void
+}
+```
+
+### 4. Next Steps for Implementation
+
+1. **Learning Session Flow**
+   - Implement session creation workflow in `/session/new`
+   - Create assessment components in `components/questions`
+   - Build progress tracking UI in `components/analytics`
+
+2. **Project Management**
+   - Complete CRUD operations for projects
+   - Implement document upload and management
+   - Add milestone management interface
+
+3. **Analytics & Progress**
+   - Implement performance visualization components
+   - Create progress tracking dashboards
+   - Build motivation tracking interface
+
+### 5. Testing Requirements
+
+1. **Component Tests**
+   - Place tests in `__tests__` directory next to components
+   - Follow existing test patterns:
+   ```typescript
+   import { render, screen } from '@testing-library/react'
+   import userEvent from '@testing-library/user-event'
+   
+   describe('ComponentName', () => {
+     it('should render correctly', () => {})
+     it('should handle user interactions', () => {})
+     it('should manage state changes', () => {})
+   })
+   ```
+
+### 6. Best Practices
+
+1. **Server Components**
+   - Use React Server Components by default
+   - Add `"use client"` only when necessary
+   - Keep client-side JavaScript minimal
+
+2. **Error Handling**
+   - Implement error boundaries
+   - Use proper loading states
+   - Handle edge cases gracefully
+
+3. **Accessibility**
+   - Follow WCAG guidelines
+   - Use proper ARIA labels
+   - Ensure keyboard navigation
+   - Test with screen readers
+
+4. **Performance**
+   - Implement proper code splitting
+   - Use Image component for optimized images
+   - Minimize client-side JavaScript
+   - Implement proper caching strategies
+
+### 7. Documentation
+
+- Document new components in component files
+- Update README.md for significant changes
+- Add JSDoc comments for complex functions
+- Document any new environment variables
+
+### 8. Git Workflow
+
+- Create feature branches from `main`
+- Use conventional commit messages
+- Include tests with new features
+- Request reviews for significant changes
+
+## Getting Help
+
+- Reference the ShadcnUI documentation for component usage
+- Consult the Next.js documentation for routing and data fetching
+- Review existing components for patterns and best practices
+- Follow the established project structure for new features
+
+Remember to maintain the existing high standards for code quality, performance, and user experience while implementing new features.

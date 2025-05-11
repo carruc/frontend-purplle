@@ -3,7 +3,7 @@ import { Sidebar } from '../sidebar'
 
 // Mock the usePathname hook
 jest.mock('next/navigation', () => ({
-  usePathname: () => '/dashboard'
+  usePathname: () => '/homepage'
 }))
 
 describe('Sidebar', () => {
