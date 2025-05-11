@@ -1,0 +1,113 @@
+# PurpLLE Development Changes Summary
+
+## Recent Implementations (February 2024)
+
+### 1. Project Data Management
+- Implemented mock API in `src/lib/api/projects.ts`
+  - Created 22 mock projects (2 detailed + 20 exam projects)
+  - Added sorting functionality (alphabetical, deadline, recent)
+  - Implemented pagination support
+  - Added simulated network delay for realistic testing
+
+- Created `useProjects` hook in `src/lib/hooks/useProjects.ts`
+  - Manages project data fetching
+  - Handles loading and error states
+  - Supports sorting and pagination
+  - Uses mock userId ("user123") for development
+
+### 2. Sidebar Improvements
+- Implemented new `ProjectListSidebar` component with:
+  - Sticky "+" button within scrollable area
+  - Project entries with emoji indicators
+  - Proper overflow handling
+  - Search functionality
+  - Visual hierarchy with indentation
+
+- Structured sidebar into three sections:
+  1. Fixed header (logo, homepage button, search)
+  2. Scrollable projects list (90% width, right-aligned)
+  3. Fixed footer (copyright)
+
+### 3. Viewport Management
+- Implemented viewport constraints in root layout:
+  ```tsx
+  // src/app/layout.tsx
+  <html className="h-full">
+    <body className="h-full overflow-hidden">
+      <div className="flex h-full">
+        <Sidebar />
+        <main className="flex-1 overflow-hidden">
+  ```
+
+- Each major section handles its own scrolling:
+  - Sidebar projects list: `overflow-y-auto`
+  - Main content area: `overflow-y-auto`
+  - No global page scroll
+
+### 4. Component Structure
+- Homepage (`src/app/homepage/page.tsx`):
+  - Uses `useProjects` hook
+  - Implements loading skeletons
+  - Error handling
+  - Responsive grid layout
+
+- Projects Page (`src/app/projects/page.tsx`):
+  - Currently using mock data directly
+  - Pending update to use `useProjects` hook
+  - Needs loading states and error handling
+
+### 5. UI/UX Improvements
+- Consistent spacing and alignment
+- Visual hierarchy in sidebar
+- Loading states with skeleton components
+- Proper error handling and feedback
+- Responsive design considerations
+
+## Pending Tasks
+1. Update Projects page to use `useProjects` hook
+2. Implement proper authentication and user context
+3. Replace mock API with real backend integration
+4. Add proper error boundaries
+5. Implement project creation workflow
+6. Add proper testing
+
+## Technical Decisions
+
+### API Design
+- Included pagination and sorting in API design for scalability
+- Used TypeScript interfaces for type safety
+- Implemented proper error handling
+
+### Component Architecture
+- Used React Server Components where possible
+- Client components marked with "use client"
+- Proper prop typing and interface definitions
+- Consistent component structure
+
+### Styling Approach
+- Used Tailwind CSS exclusively
+- Consistent class naming
+- Mobile-first responsive design
+- ShadcnUI components for UI elements
+
+## Notes for Future Development
+1. The mock API in `projects.ts` simulates realistic backend behavior
+2. The `useProjects` hook is designed to be easily extended for real API integration
+3. Viewport management ensures no global scrolling
+4. Project list components are designed to handle large datasets
+5. Current font is Geist (previously changed from Inter)
+
+## Environment Setup
+- Next.js 13+ with App Router
+- TypeScript for type safety
+- TailwindCSS for styling
+- ShadcnUI components
+- Proper viewport constraints
+
+## Testing
+When implementing new features, ensure:
+1. Proper loading states
+2. Error handling
+3. Responsive design
+4. Accessibility
+5. Performance with large datasets 

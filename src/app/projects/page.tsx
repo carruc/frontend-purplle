@@ -96,12 +96,6 @@ export default function ProjectsPage() {
             View and manage your learning projects
           </p>
         </div>
-        <Link href="/projects/new">
-          <Button>
-            <Plus className="h-4 w-4 mr-2" />
-            New Project
-          </Button>
-        </Link>
       </div>
 
       <ProjectList 
